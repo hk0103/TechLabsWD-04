@@ -11,7 +11,7 @@ export default function Home() {
       height: "100vh",
       width: "100vw",
     }}>
-      Hello world!
+      Have a nice day 👋
     </div>
   );
 }
