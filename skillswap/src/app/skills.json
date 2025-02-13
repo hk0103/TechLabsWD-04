@@ -1,0 +1,36 @@
+{
+    "skills": [
+        {
+            "id": 1,
+            "name": "Photo"
+        },
+        {
+            "id": 2,
+            "name": "Education"
+        },
+        {
+            "id": 3,
+            "name": "Music"
+        },
+        {
+            "id": 4,
+            "name": "Programming"
+        },
+        {
+            "id": 5,
+            "name": "Food"
+        },
+        {
+            "id": 6,
+            "name": "Dance"
+        },
+        {
+            "id": 7,
+            "name": "Heath"
+        },
+        {
+            "id": 8,
+            "name": "Other"
+        }
+    ]
+}
