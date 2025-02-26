@@ -1,7 +1,7 @@
 "use client";
 
+import Footer from "./_components/Footer";
 import Logo from "./_components/Logo";
-import Footer from "./footer";
 
 export default function Homepage() {
   return (
