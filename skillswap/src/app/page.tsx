@@ -1,5 +1,6 @@
 "use client";
 
+import Logo from "./_components/Logo";
 import Footer from "./footer";
 
 export default function Homepage() {
@@ -19,16 +20,8 @@ export default function Homepage() {
         zIndex: 1000,
       }}>
         {/* Left Section: Logo */}
-        <div>
-          <img 
-            src="/images/homepage/logo.png" 
-            alt="Skill Swap Logo" 
-            style={{ 
-              height: '40px', 
-              width: 'auto', 
-            }} 
-          />
-        </div>
+
+        <Logo /> {/* Logo Component from /_components/Logo.tsx */}
 
         {/* Middle Section: Navigation Links */}
         <nav style={{ 
