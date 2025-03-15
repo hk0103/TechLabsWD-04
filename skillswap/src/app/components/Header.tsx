@@ -11,9 +11,9 @@ export default function Header() {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
+        setIsVisible(false); 
       } else {
-        setIsVisible(true);
+        setIsVisible(true); 
       }
 
       setLastScrollY(currentScrollY);
@@ -34,6 +34,7 @@ export default function Header() {
         color: '#000',
         padding: '10px 20px',
         display: 'flex',
+        flexDirection: 'column', 
         justifyContent: 'space-between',
         alignItems: 'center',
         width: '100%',
@@ -45,37 +46,91 @@ export default function Header() {
         transition: 'transform 0.3s ease-in-out',
       }}
     >
-      {/* Logo */}
-      <Logo />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          width: '100%',
+          marginBottom: '10px', 
+        }}
+      >
+        {/* Left: Logo */}
+        <div>
+        <img
+            src="/images/homepage/favicon.png"
+            alt="Skill Swap Logo"
+            style={{
+              height: '40px', 
+              width: 'auto',
+            }}
+          />
+        </div>
 
-      {/* Navigation */}
-      <nav style={{
-        display: 'flex',
-        gap: '15px',
-        position: 'absolute',
-        left: '50%',
-        transform: 'translateX(-50%)',
-      }}>
-        <a href="#home" style={{ color: '#000', textDecoration: 'none' }}>Home</a>
-        <a href="#languages" style={{ color: '#000', textDecoration: 'none' }}>Languages</a>
-        <a href="#art-music" style={{ color: '#000', textDecoration: 'none' }}>Art & Music</a>
-        <a href="#sport" style={{ color: '#000', textDecoration: 'none' }}>Sport</a>
-        <a href="#other" style={{ color: '#000', textDecoration: 'none' }}>Other</a>
-      </nav>
-
-      {/* Search */}
-      <div>
-        <input
-          type="text"
-          placeholder="Search for skill"
+        {/* Middle: Search Bar */}
+        <div
           style={{
-            padding: '10px',
-            width: '200px',
-            border: '1px solid #ccc',
-            borderRadius: '5px',
+            flex: 1,
+            maxWidth: '600px', 
+            margin: '0 20px', 
           }}
-        />
+        >
+          <input
+            type="text"
+            placeholder="Search "
+            style={{
+              width: '100%',
+              padding: '10px',
+              border: '1px solid #ccc',
+              borderRadius: '5px',
+              fontSize: '16px',
+            }}
+          />
+        </div>
+
+        {/* Right: Login Button */}
+        <button
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#000', 
+            color: '#ffffff',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            fontSize: '16px',
+          }}
+        >
+          Sign In
+        </button>
       </div>
+
+      {/* Second Line */}
+      <nav
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '20px', 
+          padding: '10px 0',
+          borderTop: '1px solid #e0e0e0', 
+          width: '100%',
+        }}
+      >
+        <a href="#home" style={{ color: '#000', textDecoration: 'none' }}>
+          Home
+        </a>
+        <a href="#languages" style={{ color: '#000', textDecoration: 'none' }}>
+          Languages
+        </a>
+        <a href="#art-music" style={{ color: '#000', textDecoration: 'none' }}>
+          Art & Music
+        </a>
+        <a href="#sport" style={{ color: '#000', textDecoration: 'none' }}>
+          Sport
+        </a>
+        <a href="#other" style={{ color: '#000', textDecoration: 'none' }}>
+          Other
+        </a>
+      </nav>
     </header>
   );
 }
