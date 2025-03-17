@@ -1,20 +1,43 @@
-require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+const router = express.Router();
+const Skill = require("../models/Skill");
 
-const app = express();
-app.use(cors());
-app.use(express.json()); // To handle JSON body requests
 
-// Connect to MongoDB
-mongoose
-    .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("MongoDB Connected"))
-    .catch(err => console.log(err));
+// ✅ POST: Add a new skill
+router.post("/", async (req, res) => {
+    try {
+        const { category, title, description, user, contact, subcategory } = req.body;
+        if (!category || !title || !description || !user || !contact) {
+            return res.status(400).json({ error: "All fields are required" });
+        }
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+        const newSkill = new Skill({ category, title, description, user, contact, subcategory });
+        await newSkill.save();
+        res.status(201).json(newSkill);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
-const skillRoutes = require("./routes/skills");
-app.use("/api/skills", skillRoutes);
+// ✅ GET: Fetch all skills
+router.get("/", async (req, res) => {
+    try {
+        const skills = await Skill.find();
+        res.json(skills);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// ✅ GET: Fetch skills by category
+router.get("/:category", async (req, res) => {
+    try {
+        const skills = await Skill.find({ category: req.params.category });
+        res.json(skills);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+module.exports = router;
 
