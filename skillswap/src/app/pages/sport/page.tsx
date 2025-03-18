@@ -7,7 +7,7 @@ import Socials from '@/app/components/Socials';
 
 const sport = [
   { name: 'Zumba', image: '/images/sport/1.jpg' }, 
-  { name: 'Running', image: '/images/sport/2.png' }, 
+  { name: 'Running', image: '/images/sport/2.jpg' }, 
   { name: 'Tennis', image: '/images/sport/3.jpg' },
   { name: 'Personal Training', image: '/images/sport/4.jpg' },
   { name: 'Pilates', image: '/images/sport/5.jpeg' },

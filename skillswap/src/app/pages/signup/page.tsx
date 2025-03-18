@@ -5,7 +5,7 @@ import Footer from '@/app/components/Footer';
 import Logo from '@/app/components/Logo';
 import LoginRegister from '@/app/components/LoginRegister';
 
-const signup = () => {
+const Signup = () => {
     return (
         <div>
             <Header />
@@ -16,4 +16,4 @@ const signup = () => {
     );
 };
 
-export default signup;
+export default Signup;

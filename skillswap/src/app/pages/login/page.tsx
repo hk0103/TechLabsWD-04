@@ -1,18 +1,19 @@
+'use client';
 import React from 'react';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Logo from '@/app/components/Logo';
-import Socials from '@/app/components/Socials';
+import LoginFormComponent from '@/app/components/Login';  
 
-const Sport = () => {
+const Login = () => {
     return (
         <div>
             <Header />
             <Logo />
-            <Socials />
+            <LoginFormComponent />
             <Footer />
         </div>
     );
 };
 
-export default Sport;
+export default Login;
