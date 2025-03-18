@@ -12,10 +12,10 @@ export default function LoginRegister() {
 
   const categories = {
     "": [],
-    Languages: ["English", "Spanish", "German", "Italian", "Arabic", "French"],
+    Languages: ["English", "Spanish", "German", "Ukrainian", "Russian", "French", "Chinese"],
     Sports: ["Zumba", "Running", "Tennis", "Personal Training", "Pilates"],
     "Art & Music": ["Painting", "Photography", "Singing", "Guitar", "Piano", "Crocheting"],
-    Other: ["Dance", "Cooking", "Programming", "Graphic Design"],
+    Other: ["Cooking", "Programming", "Graphic Design","Public speaking" ],
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
