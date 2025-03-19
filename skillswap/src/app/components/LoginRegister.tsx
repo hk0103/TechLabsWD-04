@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 export default function LoginRegister() {
+  // State to manage form input values
   const [formData, setFormData] = useState({
     name: "",
     category: "",
@@ -10,30 +11,34 @@ export default function LoginRegister() {
     contact: "",
   });
 
+  // Categories and their respective subcategories
   const categories = {
     "": [],
     Languages: ["English", "Spanish", "German", "Ukrainian", "Russian", "French", "Chinese"],
     Sports: ["Zumba", "Running", "Tennis", "Personal Training", "Pilates"],
     "Art & Music": ["Painting", "Photography", "Singing", "Guitar", "Piano", "Crocheting"],
-    Other: ["Cooking", "Programming", "Graphic Design","Public speaking" ],
+    Other: ["Cooking", "Programming", "Graphic Design", "Public speaking"],
   };
 
+  // Function to handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Reset subcategory when category changes
+    // Reset subcategory when a new category is selected
     if (name === "category") {
       setFormData((prev) => ({ ...prev, subcategory: "" }));
     }
   };
 
+  // Function to handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    console.log("Form submitted:", formData); 
   };
 
   return (
+    // Container with title and description
     <div className="mt-32 text-center border-b-2 border-gray-300 pb-8">
       <h2 className="text-5xl font-bold uppercase">ADD OFFER / REGISTER</h2>
       <p className="text-xl mt-6 max-w-3xl mx-auto">
@@ -41,10 +46,12 @@ export default function LoginRegister() {
         Connect with others and start exchanging knowledge today!
       </p>
 
+      {/* Form container centered on the page */}
       <div className="mt-12 flex justify-center">
         <div className="w-full max-w-3xl">
           <form className="space-y-4" onSubmit={handleSubmit}>
-            {/* Name Input */}
+            
+            {/* Name Input Field */}
             <div>
               <input
                 type="text"
@@ -95,7 +102,7 @@ export default function LoginRegister() {
               </div>
             )}
 
-            {/* Title Input */}
+            {/* Title Input Field */}
             <div>
               <input
                 type="text"
@@ -103,11 +110,12 @@ export default function LoginRegister() {
                 value={formData.title}
                 onChange={handleChange}
                 placeholder="Title of your ad"
+
                 className="w-full p-4 rounded-md border border-gray-300 bg-white"
               />
             </div>
 
-            {/* Offer Text Area */}
+            {/* Offer Description Text Area */}
             <div>
               <textarea
                 name="description"
@@ -118,7 +126,7 @@ export default function LoginRegister() {
               />
             </div>
 
-            {/* Contact Info */}
+            {/* Contact Info Input Field */}
             <div>
               <input
                 type="text"
@@ -138,6 +146,7 @@ export default function LoginRegister() {
                 Submit Offer
               </button>
             </div>
+            
           </form>
         </div>
       </div>
